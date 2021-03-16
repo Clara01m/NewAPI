@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
 
 namespace PorojectAPI.Controllers
@@ -7,10 +8,19 @@ namespace PorojectAPI.Controllers
     [Route("api/pokemon")] //servern ska kolla här när användaren vill komma åt pokemon
     public class PokemonController:ControllerBase
     {
+        List<Pokemon> pokemons = new List<Pokemon>()
+        {
+            new Pokemon(){Name="Pikachu"},
+            new Pokemon(){Name="Loudred"},
+            new Pokemon(){Name="Rayquaza"},
+            new Pokemon(){Name= "Mimikyu"}
+        };
         [HttpGet] //Hämtar något ur servern
         public ActionResult Get()
         {
-            return Ok("Hej");
+            return Ok("Hello :)");
+
+
         }
     }
 }
