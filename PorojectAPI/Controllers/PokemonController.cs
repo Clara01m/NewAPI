@@ -15,11 +15,17 @@ namespace PorojectAPI.Controllers
             new Pokemon(){Name="Rayquaza"},
             new Pokemon(){Name= "Mimikyu"}
         };
+
         [HttpGet] //Hämtar något ur servern
         public ActionResult Get()
         {
-            return Ok("Hello :)");
-
+            return Ok(pokemons[0]);
+        }
+        [HttpPut]
+        public ActionResult Put (Pokemon pokemon)
+        {
+            pokemons.Add(pokemon);
+            return Ok();
 
         }
     }
